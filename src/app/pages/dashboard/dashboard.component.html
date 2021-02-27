@@ -1,0 +1,9 @@
+
+<div class="dashboard">
+   
+    <app-login></app-login>
+    <app-post-form (formValue)="onSubmit($event)"></app-post-form>
+    <div class="dashboard__cards-content">
+        <app-card-post *ngFor="let card of cardList" [title]="card.title" [post]="card.post"></app-card-post>
+    </div>
+</div>

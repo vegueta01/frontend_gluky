@@ -1,0 +1,15 @@
+<form [formGroup]="postForm"  class="form" (submit)="onSubmit()">
+    <mat-form-field class="form__post-title" >
+        <mat-label>Title post</mat-label>
+        <input formControlName="title" matInput #first>
+    </mat-form-field>
+    <mat-form-field class="form__post-content">
+        <mat-label>Leave a Post</mat-label>
+        <textarea 
+        formControlName="post"
+        matInput 
+        cdkTextareaAutosize
+        ></textarea>
+    </mat-form-field>
+    <button  mat-raised-button color="primary"  type="submit" [disabled]="postForm.invalid">Add post</button>
+</form>

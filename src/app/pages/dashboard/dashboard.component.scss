@@ -1,0 +1,10 @@
+.dashboard {
+    &>* {
+        margin: 0 1rem;
+    }
+    &__cards-content {
+        &>* {
+            margin: 0 1rem;
+        }
+     }
+}

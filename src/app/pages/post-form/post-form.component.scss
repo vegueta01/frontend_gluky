@@ -1,0 +1,15 @@
+.form {
+    width:100%;
+    &>* {
+        margin: 0 1rem;
+    }
+    &__cards-content {
+        &>* {
+            margin: 0 1rem;
+        }
+    }
+
+    &__post-content {
+        width: 60%
+    }
+}
