@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment';
 
 import { AuthService } from './auth.service';
 
-describe("AuthService 1", () => {
+describe('AuthService 1', () => {
   let service: AuthService;
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -35,17 +35,17 @@ describe("AuthService 1", () => {
               authState: of(null)
             }
         }
-        
+
       ]
     });
     service = TestBed.inject(AuthService);
   });
-    
-    it('should be created', () => {
+
+  it('should be created', () => {
       expect(service).toBeTruthy();
     });
 
-    it('should be logged in', () => {
+  it('should be logged in', () => {
       service.login();
       expect(service.user).toEqual(null) ;
     });
@@ -81,7 +81,7 @@ describe('AuthService 2', () => {
               authState: of({})
             }
         }
-        
+
       ]
     });
     service = TestBed.inject(AuthService);

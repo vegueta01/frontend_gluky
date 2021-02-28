@@ -27,12 +27,12 @@ describe('LoginComponent', () => {
   });
 
   it('should login have been called', () => {
-    spyOn(component.authService, "login");
+    spyOn(component.authService, 'login');
     component.login();
     expect(component.authService.login).toHaveBeenCalled();
   });
   it('should login have been called', () => {
-    spyOn(component.authService, "logout");
+    spyOn(component.authService, 'logout');
     component.logout();
     expect(component.authService.logout).toHaveBeenCalled();
   });

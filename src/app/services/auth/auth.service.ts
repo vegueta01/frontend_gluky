@@ -11,7 +11,7 @@ export class AuthService {
   constructor(private socialAuthService: SocialAuthService) {
     this.socialAuthService.authState.subscribe(user => {
       this.user = user;
-      if(user){
+      if (user){
         sessionStorage.setItem(storageKeys.TOKEN, user.idToken);
         sessionStorage.setItem(storageKeys.USER_DATA, this.criptMock(user));
       }
@@ -23,14 +23,14 @@ export class AuthService {
   logout() {
     this.socialAuthService.signOut();
     sessionStorage.removeItem(storageKeys.TOKEN);
-    sessionStorage.removeItem(storageKeys.USER_DATA); 
+    sessionStorage.removeItem(storageKeys.USER_DATA);
   }
 
   criptMock(user: SocialUser): string {
-    return btoa(JSON.stringify(user))
+    return btoa(JSON.stringify(user));
   }
 
   decriptMock(user: string): string {
-   return atob(user)
+   return atob(user);
   }
 }

@@ -12,11 +12,11 @@ export class DashboardComponent implements OnInit {
   constructor(public authService: AuthService) { }
   ngOnInit(): void {}
 
-  onSubmit(formValue: FormValueInterface) {    
-    if(!!this.authService.user) {
+  onSubmit(formValue: FormValueInterface) {
+    if (!!this.authService.user) {
       this.cardList.push(formValue);
     } else {
-      this.authService.login().then(()=> {
+      this.authService.login().then(() => {
         this.cardList.push(formValue);
       });
     }

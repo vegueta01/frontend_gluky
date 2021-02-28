@@ -17,10 +17,10 @@ export class PostFormComponent implements OnInit {
     this.postForm = new FormGroup({
       title: new FormControl(null, [Validators.required, Validators.maxLength(255)]),
       post: new FormControl(null, [Validators.required]), // TODO: add max length from data base
-    })
+    });
   }
 
   onSubmit() {
-    this.formValue.emit(this.postForm.value)
+    this.formValue.emit(this.postForm.value);
   }
 }

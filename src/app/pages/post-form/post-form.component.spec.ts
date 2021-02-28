@@ -23,7 +23,7 @@ describe('PostFormComponent', () => {
     expect(component).toBeTruthy();
   });
   it('should formValue have been called', () => {
-    spyOn(component.formValue, "emit");
+    spyOn(component.formValue, 'emit');
     component.onSubmit();
     expect(component.formValue.emit).toHaveBeenCalled();
   });

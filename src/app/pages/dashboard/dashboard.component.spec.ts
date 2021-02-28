@@ -26,9 +26,9 @@ describe('DashboardComponent', () => {
   });
   it('should call the function cardList.push', () => {
     component.onSubmit(
-      { 
-        title: "title",
-        post: "post",
+      {
+        title: 'title',
+        post: 'post',
       }
     );
   });
