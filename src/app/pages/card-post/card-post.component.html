@@ -4,6 +4,16 @@
         {{ title }}
     </mat-card-title>
     <mat-card-content>
-        {{ post }}
+        {{ body }}
     </mat-card-content>
+    <mat-card-footer>
+        <div class="footer">
+            <button (click)="editButtonEmit()" mat-raised-button color="basic">Edit</button>
+            <button (click)="deleteButtonEmit()"mat-raised-button color="warn">Delete</button>
+            <div class="footer__state" [style.color]="colorState">
+                {{ state }}
+                <mat-icon>{{iconState}}</mat-icon>
+            </div>
+        </div>
+    </mat-card-footer>
 </mat-card>

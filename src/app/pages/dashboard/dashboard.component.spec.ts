@@ -28,7 +28,8 @@ describe('DashboardComponent', () => {
     component.onSubmit(
       {
         title: 'title',
-        post: 'post',
+        body: 'body',
+        postId: 'postId',
       }
     );
   });

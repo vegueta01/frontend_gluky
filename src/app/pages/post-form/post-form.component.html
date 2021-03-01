@@ -6,10 +6,10 @@
     <mat-form-field class="form__post-content">
         <mat-label>Leave a Post</mat-label>
         <textarea 
-        formControlName="post"
+        formControlName="body"
         matInput 
         cdkTextareaAutosize
         ></textarea>
     </mat-form-field>
-    <button  mat-raised-button color="primary"  type="submit" [disabled]="postForm.invalid">Add post</button>
+    <button  mat-raised-button color="primary"  type="submit" [disabled]="postForm.invalid">Post</button>
 </form>

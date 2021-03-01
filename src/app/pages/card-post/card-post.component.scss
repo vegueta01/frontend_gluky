@@ -1,0 +1,15 @@
+.footer {
+    display: flex;
+    padding: 0 1rem;
+    &>* {
+        margin: 0 .5rem;
+    }
+
+    &__state {
+        display: flex;
+        align-items: center;
+        &>* {
+            margin: 0 .2rem;
+        }
+    }
+}
