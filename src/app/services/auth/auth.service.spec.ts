@@ -93,22 +93,26 @@ describe('AuthService 2', () => {
 
 
   it('should be logged', () => {
-    spyOn(service["socialAuthService"], "signIn")
+    // tslint:disable-next-line: no-string-literal
+    spyOn(service['socialAuthService'], 'signIn');
     service.login();
-    expect(service["socialAuthService"].signIn).toHaveBeenCalled();
+       // tslint:disable-next-line: no-string-literal
+    expect(service['socialAuthService'].signIn).toHaveBeenCalled();
   });
 
   it('should be offline', () => {
-    spyOn(service["socialAuthService"], "signOut")
+       // tslint:disable-next-line: no-string-literal
+    spyOn(service['socialAuthService'], 'signOut');
     service.logout();
-    expect(service["socialAuthService"].signOut).toHaveBeenCalled();
+       // tslint:disable-next-line: no-string-literal
+    expect(service['socialAuthService'].signOut).toHaveBeenCalled();
   });
   it('should encript ', () => {
-    const user  = {email: "felipe.buitrago.betancourt@gmail.com", name: "felipe buitrago"} as SocialUser;
+    const user  = {email: 'felipe.buitrago.betancourt@gmail.com', name: 'felipe buitrago'} as SocialUser;
     expect(service.criptMock(user)).toEqual(jasmine.any(String));
   });
   it('should decript ', () => {
-    const criptUser = "eyJlbWFpbCI6ImZlbGlwZS5idWl0cmFnby5iZXRhbmNvdXJ0QGdtYWlsLmNvbSIsIm5hbWUiOiJmZWxpcGUgYnVpdHJhZ28ifQ==";
+    const criptUser = 'eyJlbWFpbCI6ImZlbGlwZS5idWl0cmFnby5iZXRhbmNvdXJ0QGdtYWlsLmNvbSIsIm5hbWUiOiJmZWxpcGUgYnVpdHJhZ28ifQ==';
     expect(service.decriptMock(criptUser)).toEqual(jasmine.any(String));
   });
 });

@@ -1,4 +1,5 @@
 export enum storageKeys  {
     TOKEN = 'token',
     USER_DATA = 'user_data',
+    DATABASE_MOCK = 'database_mock',
 }

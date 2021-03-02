@@ -22,26 +22,26 @@ export class CardPostComponent implements OnInit {
   get iconState() {
     switch (this.state) {
       case 'pending':
-        return 'warning_amber'
+        return 'warning_amber';
       case 'rejected':
-        return 'cancel'
+        return 'cancel';
       case 'published':
-        return 'done_all'
+        return 'done_all';
       default:
-        return 'help_outline'
+        return 'help_outline';
     }
   }
 
   get colorState() {
     switch (this.state) {
       case 'pending':
-        return 'darkorange'
+        return 'darkorange';
       case 'rejected':
-        return 'red'
+        return 'red';
       case 'published':
-        return 'green'
+        return 'green';
       default:
-        return 'red'
+        return 'red';
     }
   }
 
@@ -50,7 +50,7 @@ export class CardPostComponent implements OnInit {
       title: this.title,
       body: this.body,
       postId: this.postId,
-    })
+    });
   }
 
   deleteButtonEmit() {
@@ -58,7 +58,7 @@ export class CardPostComponent implements OnInit {
       title: this.title,
       body: this.body,
       postId: this.postId,
-    })
+    });
   }
 
 }

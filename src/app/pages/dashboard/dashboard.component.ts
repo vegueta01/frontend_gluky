@@ -18,15 +18,11 @@ export class DashboardComponent implements OnInit {
     ) { }
   ngOnInit(): void {
     this.authService.authState.subscribe((user) => {
-      if(user) {
-        const user = this.authService.getUserData();
-        this.blogPostService.getPosts(user.id).subscribe((data) => {
-          this.cardList = data.posts;          
-        });
-      } else {
-        this.cardList = [];
-      }
-    })
+      const userStorage = this.authService.getUserData();
+      this.blogPostService.getPosts(userStorage?.id).subscribe((data) => {
+        this.cardList = data.posts;
+      });
+    });
   }
 
   onSubmit(formValue: FormValueInterface) {
@@ -37,21 +33,22 @@ export class DashboardComponent implements OnInit {
         this.pushData(formValue);
       });
     }
-  }  
+  }
 
   async pushData(formValue: FormValueInterface) {
-
     try {
-      let post_id = "";
-      if(!!formValue.postId) {
+      // tslint:disable-next-line: variable-name
+      let post_id = '';
+      if (!!formValue.postId) {
         post_id = (await this.blogPostService.updatePost(formValue).toPromise()).post_id;
         const elementOfList = {};
-        delete Object.assign(elementOfList, formValue, {post_id: post_id })["postId"];
+        delete Object.assign(elementOfList, formValue, { post_id }).postId;
+        // tslint:disable-next-line: max-line-length
         this.cardList[this.cardList.findIndex(card => card.post_id === post_id)] = { state: 'pending', ...elementOfList as CardValueInterface};
       } else {
-        post_id = (await this.blogPostService.insertPost(formValue).toPromise()).post_id;  
+        post_id = (await this.blogPostService.insertPost(formValue).toPromise()).post_id;
         const elementOfList = {};
-        delete Object.assign(elementOfList, formValue, {post_id: post_id })["postId"];
+        delete Object.assign(elementOfList, formValue, { post_id }).postId;
         this.cardList.push({ state: 'pending', ...elementOfList as CardValueInterface});
       }
       this.resetFormValues();
@@ -66,7 +63,7 @@ export class DashboardComponent implements OnInit {
       title: null,
       body: null,
       postId: null,
-    })
+    });
   }
 
   editButton(event) {
@@ -76,7 +73,7 @@ export class DashboardComponent implements OnInit {
   async deleteButton(event: FormValueInterface) {
     await this.blogPostService.deletePost(event).toPromise();
     this.cardList = this.cardList.filter((item) => {
-      return item.post_id != event.postId;
+      return item.post_id !== event.postId;
     });
     this.resetFormValues();
   }

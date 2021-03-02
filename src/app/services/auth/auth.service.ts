@@ -9,7 +9,7 @@ import { UserInterface } from './models/user-interface';
 })
 export class AuthService {
   user: SocialUser;
-  authState: Observable<SocialUser>
+  authState: Observable<SocialUser>;
   GoogleLoginProvider = GoogleLoginProvider;
   constructor(private socialAuthService: SocialAuthService) {
     this.authState = this.socialAuthService.authState;

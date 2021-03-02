@@ -10,7 +10,7 @@ export interface UserInterface {
     idToken: string;
     provider: string;
   }
-  export interface Response {
+export interface Response {
     wR: string;
     sd: string;
     bT: string;
@@ -18,4 +18,3 @@ export interface UserInterface {
     fI: string;
     kt: string;
   }
-  
